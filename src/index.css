@@ -307,3 +307,32 @@ input, select, textarea { font-family: inherit; }
     transition-duration: .01ms !important;
   }
 }
+
+/* ─── Tile tools (edit/delete on hover) ─── */
+.tile-tools {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transform: scale(.9);
+  transition: opacity .2s ease, transform .2s ease;
+}
+.app-tile:hover .tile-tools,
+.app-tile:focus-visible .tile-tools { opacity: 1; transform: scale(1); }
+.tile-tools > span {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  box-shadow: 2px 2px 5px rgba(163,177,198,0.4), -2px -2px 5px rgba(255,255,255,0.9);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: color .15s ease, box-shadow .15s ease;
+}
+.tile-tools > span:hover { color: #6366F1; }
+.tile-tools > span:last-child:hover { color: #DC2626; }
